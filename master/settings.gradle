@@ -1,0 +1,5 @@
+// Site
+includeFlat 'SpringXml.Site'
+
+// Site
+project(':SpringXml.Site').projectDir = new File(settingsDir,  '../SpringXml.Site')

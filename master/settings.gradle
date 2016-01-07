@@ -1,5 +1,7 @@
 // Site
 includeFlat 'SpringXml.Site'
-
-// Site
 project(':SpringXml.Site').projectDir = new File(settingsDir,  '../SpringXml.Site')
+
+// Training1.0
+includeFlat 'Training1.0'
+project(':Training1.0').projectDir = new File(settingsDir,  '../Training1.0')

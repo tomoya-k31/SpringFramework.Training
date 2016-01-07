@@ -1,0 +1,47 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven { url "http://repo.spring.io/snapshot" }
+        maven { url "http://repo.spring.io/milestone" }
+    }
+    dependencies {
+        classpath 'org.springframework:springloaded:1.2.4.RELEASE'
+    }
+}
+
+
+plugins {
+  id 'nebula.optional-base' version '3.0.3'
+  id 'nebula.provided-base' version '3.0.3'
+}
+apply plugin: 'nebula.provided-base'
+apply plugin: 'nebula.optional-base'
+
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+ext {
+    springVersion = '4.2.2.RELEASE'
+}
+
+// Hot Swapping 'Spring Loaded' Setting for IDEA
+// IDEAのMake project automaticallyをチェック
+idea {
+    module {
+        inheritOutputDirs = false
+        outputDir = file("$buildDir/classes/main/")
+    }
+}
+
+repositories {
+    jcenter()
+    maven { url "http://repo.spring.io/snapshot" }
+    maven { url "http://repo.spring.io/milestone" }
+}
+
+dependencies {
+    compile "org.springframework:spring-core:$springVersion"
+    compile "org.springframework:spring-context:$springVersion"
+    provided "org.projectlombok:lombok:1.16.6"
+}

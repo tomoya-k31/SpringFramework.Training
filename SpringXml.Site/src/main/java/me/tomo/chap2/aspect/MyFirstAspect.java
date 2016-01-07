@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyFirstAspect {
 
-    @Before("execution(* getProduct())")
+    @Before("execution(* me.tomo.chap2.service.ProductService.getProduct())")
     public void before(JoinPoint jp) {
         // メソッド開始時にWeavingするAdvice
         System.out.println("Hello Before! *** メソッドが呼ばれる前に出てくるよ!");
@@ -45,7 +45,7 @@ public class MyFirstAspect {
         }
     }
 
-    @Around("execution(* getProduct())")
+    @Around("execution(* me.tomo.chap2.service.ProductService.getProduct())")
     public Product around(ProceedingJoinPoint pjp) throws Throwable {
         // メソッド呼出の前後にWeavingするAdvice
         System.out.println("Hello Around! before *** メソッドを呼ぶ前に出てくるよ!");

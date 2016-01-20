@@ -1,6 +1,7 @@
-package me.tomo.chap2.service;
+package me.tomo.service;
 
-import me.tomo.chap2.domain.Product;
+import me.tomo.domain.Product;
+import me.tomo.repository.ProductDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

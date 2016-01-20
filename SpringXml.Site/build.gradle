@@ -1,14 +1,5 @@
-buildscript {
-    repositories {
-        jcenter()
-        maven { url "http://repo.spring.io/snapshot" }
-        maven { url "http://repo.spring.io/milestone" }
-    }
-    dependencies {
-        classpath 'org.springframework:springloaded:1.2.4.RELEASE'
-        // optional,providedを使うプラグイン (maven:plugins-release)
-        classpath 'com.netflix.nebula:gradle-extra-configurations-plugin:2.2.+'
-    }
+plugins {
+    id 'nebula.provided-base' version '3.0.3'
 }
 
 apply plugin: 'java'
@@ -20,8 +11,6 @@ ext {
     springVersion = '4.2.2.RELEASE'
 }
 
-// Hot Swapping 'Spring Loaded' Setting for IDEA
-// IDEAのMake project automaticallyをチェック
 idea {
     module {
         inheritOutputDirs = false

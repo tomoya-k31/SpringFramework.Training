@@ -13,7 +13,10 @@
     <mvc:default-servlet-handler/>
     <mvc:annotation-driven/>
 
-    <context:component-scan base-package="me.tomo"/>
+    <context:component-scan base-package="me.tomo">
+        <!-- クラス名で除外 -->
+        <context:exclude-filter type="assignable" expression="me.tomo.config.AppConfig" />
+    </context:component-scan>
 
     <mvc:resources mapping="/resources/**" location="/WEB-INF/"/>
 

@@ -1,6 +1,6 @@
-package me.tomo.chap2.aspect;
+package me.tomo.aspect;
 
-import me.tomo.chap2.domain.Product;
+import me.tomo.domain.Product;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyFirstAspect {
 
-    @Before("execution(* me.tomo.chap2.service.ProductService.getProduct())")
+    @Before("execution(* me.tomo.service.ProductService.getProduct())")
     public void before(JoinPoint jp) {
         // メソッド開始時にWeavingするAdvice
         System.out.println("Hello Before! *** メソッドが呼ばれる前に出てくるよ!");
@@ -45,7 +45,7 @@ public class MyFirstAspect {
         }
     }
 
-    @Around("execution(* me.tomo.chap2.service.ProductService.getProduct())")
+    @Around("execution(* me.tomo.service.ProductService.getProduct())")
     public Product around(ProceedingJoinPoint pjp) throws Throwable {
         // メソッド呼出の前後にWeavingするAdvice
         System.out.println("Hello Around! before *** メソッドを呼ぶ前に出てくるよ!");

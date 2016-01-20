@@ -1,14 +1,13 @@
-package me.tomo.chap2.others;
+package me.tomo.repository;
 
-import me.tomo.chap2.domain.Product;
-import me.tomo.chap2.service.ProductDao;
+import me.tomo.domain.Product;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 /**
  * Created by usr0200379 on 15/12/10.
  */
-@Component
+@Repository
 public class ProductDaoImpl implements ProductDao {
 
     @Autowired

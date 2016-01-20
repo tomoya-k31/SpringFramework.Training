@@ -11,7 +11,7 @@ import java.io.IOException;
 /**
  * Created by usr0200379 on 15/10/02.
  */
-public class Start {
+public class TomcatStart {
 
     private static Tomcat tomcat;
 
@@ -30,7 +30,7 @@ public class Start {
 //        Context context = tomcat.addWebapp("/web", base.getAbsolutePath());
 
         tomcat.start();
-        Runtime.getRuntime().addShutdownHook(new Thread(Start::stop));
+        Runtime.getRuntime().addShutdownHook(new Thread(TomcatStart::stop));
         tomcat.getServer().await();
     }
 
@@ -38,8 +38,13 @@ public class Start {
 
     public static void stop() {
         try {
-            if (tomcat == null) return;
-            if (!tomcat.getServer().getState().isAvailable()) return;
+            if (tomcat == null) {
+                return;
+            }
+
+            if (!tomcat.getServer().getState().isAvailable()) {
+                return;
+            }
 
             tomcat.getServer().stop();
 

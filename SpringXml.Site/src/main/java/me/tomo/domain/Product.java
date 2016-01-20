@@ -1,4 +1,4 @@
-package me.tomo.chap2.domain;
+package me.tomo.domain;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class Product {
 
-    @Value("${aaa}")
+    @Value("${product.name}")
     private String name;
-    @Value("${bbb}")
+    @Value("${product.price}")
     private int price;
 
     public String getName() {

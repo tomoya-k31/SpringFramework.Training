@@ -1,6 +1,6 @@
-package me.tomo.chap2.service;
+package me.tomo.service;
 
-import me.tomo.chap2.domain.Product;
+import me.tomo.domain.Product;
 
 /**
  * Created by usr0200379 on 15/12/10.

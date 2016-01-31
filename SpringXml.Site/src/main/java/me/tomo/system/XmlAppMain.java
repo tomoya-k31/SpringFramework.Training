@@ -15,5 +15,7 @@ public class XmlAppMain {
         ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
         ProductService service = context.getBean(ProductService.class);
         System.out.println(service.getProduct().toString());
+
+        service.selectBookList().forEach(System.out::println);
     }
 }

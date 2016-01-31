@@ -9,10 +9,20 @@ import org.springframework.stereotype.Component;
 @Component
 public class Product {
 
+    @Value("${product.id}")
+    private int id;
     @Value("${product.name}")
     private String name;
     @Value("${product.price}")
     private int price;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -33,7 +43,8 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", price=" + price +
                 '}';
     }

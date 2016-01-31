@@ -34,6 +34,7 @@ dependencies {
     compile "org.springframework:spring-webmvc:$springVersion"
     compile "org.springframework:spring-web:$springVersion"
     compile "org.springframework:spring-aop:$springVersion"
+    compile "org.springframework:spring-jdbc:$springVersion"
     compile "org.aspectj:aspectjrt:1.8.7"
     runtime "org.aspectj:aspectjweaver:1.8.7"
 
@@ -43,6 +44,9 @@ dependencies {
     compile "javax.servlet:jstl:1.2"
 
     compile "mysql:mysql-connector-java:5.1.36"
+    compile "com.h2database:h2:1.4.190"
+
+
     // lombokプラグイン入れると楽
     provided "org.projectlombok:lombok:1.16.6"
 }

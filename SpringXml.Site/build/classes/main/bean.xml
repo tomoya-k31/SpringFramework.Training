@@ -41,7 +41,7 @@
     </bean>
 
     <context:component-scan base-package="me.tomo">
-        <!-- クラス名で除外 -->
+        <!-- クラス名で除外(AnnotationAppMainでのみ使うクラスは除外) -->
         <context:exclude-filter type="assignable" expression="me.tomo.config.AppConfig" />
     </context:component-scan>
 

@@ -14,5 +14,7 @@ public class AnnotationAppMain {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         ProductService service = context.getBean(ProductService.class);
         System.out.println(service.getProduct().toString());
+
+        service.selectBookList().forEach(System.out::println);
     }
 }
